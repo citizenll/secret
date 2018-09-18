@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+            font-family: Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+            font-variant: tabular-nums;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+            display: inline-block;
+            padding: 4px 11px;
+            height: 32px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: rgba(0,0,0,.65);
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            transition: all .3s;
+        }
+        button{
+            line-height: 1.5;
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            touch-action: manipulation;
+            cursor: pointer;
+            background-image: none;
+            border: 1px solid transparent;
+            white-space: nowrap;
+            padding: 0 15px;
+            font-size: 14px;
+            border-radius: 4px;
+            height: 32px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            transition: all .3s cubic-bezier(.645,.045,.355,1);
+            position: relative;
+            color: rgba(0,0,0,.65);
+            background-color: #fff;
+            border-color: #d9d9d9;
+        }
+        #wrapper{
+            max-width: 400px;
+            margin: 0 auto;
+            
+        }
+        #wrapper>div{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div>
+            <span>
+                <input style="flex:1" type="text" id="decode"> <button onclick="decode()">解码</button>
+            </span>
+        </div>
+        <br>
+        <div>
+            <span>
+                <input style="flex:1" type="text" id="encode"> <button onclick="encode()">编码</button>
+            </span>
+        </div>
+    </div>
+    <span id="parse"></span>
+    <script src="app.js"></script>
+</body>
+
+</html>
