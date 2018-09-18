@@ -1,12 +1,15 @@
-const zeroPad = num => '00000000'.slice(String(num).length) + num;
-const textToBinary = username => (
-    username.split('').map(char =>
-        zeroPad(char.charCodeAt(0).toString(2))).join(' ')
-);
+var zeroPad = function (num) {
+    return '00000000'.slice(String(num).length) + num
+};
+var textToBinary = function (username) {
+    return username.split('').map(function (char) {
+        return zeroPad(char.charCodeAt(0).toString(2));
+    }).join(' ')
+};
 
-const binaryToZeroWidth = binary => (
-    binary.split('').map((binaryNum) => {
-        const num = parseInt(binaryNum, 10);
+var binaryToZeroWidth = function (binary) {
+    return binary.split('').map(function (binaryNum) {
+        var num = parseInt(binaryNum, 10);
         if (num === 1) {
             return '​'; // zero-width space
         } else if (num === 0) {
@@ -14,10 +17,10 @@ const binaryToZeroWidth = binary => (
         }
         return '‍'; // zero-width joiner
     }).join('') // zero-width no-break space
-);
+};
 
-const zeroWidthToBinary = string => (
-    string.split('').map((char) => { // zero-width no-break space
+var zeroWidthToBinary = function (string) {
+    return string.split('').map(function (char) { // zero-width no-break space
         if (char === '​') { // zero-width space
             return '1';
         } else if (char === '‌') { // zero-width non-joiner
@@ -25,12 +28,13 @@ const zeroWidthToBinary = string => (
         }
         return ' '; // add single space
     }).join('')
-);
+};
 
-const binaryToText = string => (
-    string.split(' ').map(num =>
-        String.fromCharCode(parseInt(num, 2))).join('')
-);
+var binaryToText = function (string) {
+    return string.split(' ').map(function (num) {
+        return String.fromCharCode(parseInt(num, 2))
+    }).join('')
+};
 
 
 function decode() {
